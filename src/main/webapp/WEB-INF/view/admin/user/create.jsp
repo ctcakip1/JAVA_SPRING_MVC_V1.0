@@ -19,6 +19,7 @@
                     <div class="row">
                         <div class="col-md-6 col-12 mx-auto">
                             <h1>Create a user</h1>
+                            <hr />
                             <form:form method="POST" action="/admin/user/create" modelAttribute="newUser">
                                 <div class="mb-3">
                                     <label class="form-label">Email</label>
