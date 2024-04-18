@@ -14,6 +14,7 @@ import vn.hoidanit.laptopshop.service.UserService;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -46,10 +47,16 @@ public class UserController {
     }
 
     @RequestMapping(value = "/admin/user")
-    public String tableUsers(Model model) {
+    public String getTableUsers(Model model) {
         List<User> users = this.userService.getAllUser();
         model.addAttribute("users1", users);
         return "admin/user/tableUser";
+    }
+
+    @RequestMapping(value = "/admin/user/{id}")
+    public String getUserDetailPage(Model model, @PathVariable long id) {
+        model.addAttribute("id", id);
+        return "admin/user/show";
     }
 
 }
