@@ -7,7 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-
+@Table(name = "roles")
 public class Role {
 
     @Id
@@ -16,7 +16,6 @@ public class Role {
     private String name;
     private String description;
     
-
     public long getId() {
         return id;
     }
