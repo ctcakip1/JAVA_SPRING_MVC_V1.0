@@ -25,4 +25,7 @@ public class UserService {
         User tuananh = this.userRepository.save(user);
         return tuananh;
     }
+    public User getUserById(long id){
+        return this.userRepository.findById(id);
+    }
 }
