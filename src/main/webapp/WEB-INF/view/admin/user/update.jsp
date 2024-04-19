@@ -18,7 +18,7 @@
                 <div class="container mt-5">
                     <div class="row">
                         <div class="col-md-6 col-12 mx-auto">
-                            <h1>Update a user</h1>
+                            <h3>Update a user</h3>
                             <hr />
                             <form:form method="post" action="/admin/user/update" modelAttribute="newUser">
                                 <div class="mb-3" style="display: none;">
@@ -27,7 +27,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Email</label>
-                                    <form:input type="email" class="form-control" path="email" />
+                                    <form:input type="email" class="form-control" path="email" disabled = "true"/>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label">Password</label>
