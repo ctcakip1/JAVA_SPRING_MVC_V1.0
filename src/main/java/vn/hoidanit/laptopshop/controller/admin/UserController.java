@@ -101,7 +101,7 @@ public class UserController {
         String avatar = this.uploadService.handleSaveUploadFile(file, "avatar");
         if (currentUser != null) {
             currentUser.setAddress(tuananh.getAddress());
-            currentUser.setFullName(tuananh.getAddress());
+            currentUser.setFullName(tuananh.getFullName());
             currentUser.setPhone(tuananh.getPhone());
             currentUser.setAvatar(avatar);
             currentUser.setRole(this.userService.getRoleByName(tuananh.getRole().getName()));
