@@ -73,11 +73,6 @@
                 <jsp:include page="../layout/banner.jsp" />
                 <!-- Hero End -->
 
-                <!-- Features Section Start -->
-                <jsp:include page="../layout/feature.jsp" />
-                <!-- Features Section End -->
-
-
                 <!-- Clothers Shop Start-->
                 <div class="container-fluid fruite py-5">
                     <div class="container py-5">
@@ -389,6 +384,10 @@
                     </div>
                 </div>
                 <!-- Clothers Shop End-->
+
+                <!-- Features Section Start -->
+                <jsp:include page="../layout/feature.jsp" />
+                <!-- Features Section End -->
 
                 <!-- Footer Start -->
                 <jsp:include page="../layout/footer.jsp" />
