@@ -11,4 +11,8 @@ public interface ProductRespository extends JpaRepository<Product, Long> {
     Product save(Product tuananh);
 
     List<Product> findAll();
+
+    Product findById(long id);
+
+    void deleteById(long id);
 }
