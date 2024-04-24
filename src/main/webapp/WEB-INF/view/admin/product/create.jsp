@@ -104,6 +104,8 @@
                                                     <form:select class="form-select" path="factory">
                                                         <form:option value="DIOR">DIOR</form:option>
                                                         <form:option value="BURBERRY">BURBERRY</form:option>
+                                                        <form:option value="GUCCI">GUCCI</form:option>
+                                                        <form:option value="LOUISVUITTON">LOUIS VUITTON</form:option>
                                                     </form:select>
                                                 </div>
                                                 <div class="mb-3 col-12 col-md-6">
@@ -111,6 +113,8 @@
                                                     <form:select class="form-select" path="target">
                                                         <form:option value="Summer">Summer</form:option>
                                                         <form:option value="Winter">Winter</form:option>
+                                                        <form:option value="Spring">Spring</form:option>
+                                                        <form:option value="Autumn">Autumn</form:option>
                                                     </form:select>
                                                 </div>
                                                 <div class="mb-3 col-12 col-md-6">
@@ -142,4 +146,5 @@
                 <script src="/js/scripts.js"></script>
 
             </body>
+
             </html>
