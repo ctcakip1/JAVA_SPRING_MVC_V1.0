@@ -16,6 +16,7 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
+
 @Entity
 @Table(name = "users")
 public class User {
@@ -27,6 +28,7 @@ public class User {
     private String email;
     @NotNull
     @Size(min = 2, message = "Password phai co toi thieu 2 ky tu")
+
     private String password;
     @NotNull
     @Size(min = 3, message = "fullName phai co toi thieu 3 ky tu")
