@@ -36,21 +36,26 @@
                                                     <c:set var="errorEmail">
                                                         <form:errors path="email" cssClass="invalid-feedback" />
                                                     </c:set>
+                                                    <c:set var="errorFirstName">
+                                                        <form:errors path="firstName" cssClass="invalid-feedback" />
+                                                    </c:set>
                                                     <div class="row mb-3">
                                                         <div class="col-md-6">
                                                             <div class="form-floating mb-3 mb-md-0">
-                                                                <form:input class="form-control" id="inputFirstName"
+                                                                <form:input
+                                                                    class="form-control ${not empty errorFirstName ? 'is-invalid':''}"
                                                                     type="text" placeholder="Enter your first name"
                                                                     path="firstName" />
-                                                                <label for="inputFirstName">First name</label>
+                                                                <label>First name</label>
+                                                                ${errorFirstName}
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-floating">
-                                                                <form:input class="form-control" id="inputLastName"
-                                                                    type="text" placeholder="Enter your last name"
+                                                                <form:input class="form-control" type="text"
+                                                                    placeholder="Enter your last name"
                                                                     path="lastName" />
-                                                                <label for="inputLastName">Last name</label>
+                                                                <label>Last name</label>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -89,6 +94,7 @@
                                                                 Create Account
                                                             </button>
                                                         </div>
+                                                    </div>
                                                 </form:form>
                                             </div>
                                             <div class="card-footer text-center py-3">
