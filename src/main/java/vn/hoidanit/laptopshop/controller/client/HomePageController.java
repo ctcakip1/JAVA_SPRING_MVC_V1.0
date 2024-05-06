@@ -18,6 +18,8 @@ import vn.hoidanit.laptopshop.service.UserService;
 
 import org.springframework.web.bind.annotation.RequestParam;
 
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,6 +42,7 @@ public class HomePageController {
         List<Product> products = this.productService.getAllProduct();
         model.addAttribute("product1", products);
         return "client/homepage/show";
+        
     }
 
     @GetMapping("/register")
