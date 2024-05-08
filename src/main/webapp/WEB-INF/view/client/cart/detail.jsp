@@ -99,8 +99,8 @@
                                                     <input type="text"
                                                         class="form-control form-control-sm text-center border-0"
                                                         value="${cartDetail.quantity}"
-                                                        data-cart-detail-id="cartDetail.id"
-                                                        data-cart-detail-price="cartDetail.price">
+                                                        data-cart-detail-id="${cartDetail.id}"
+                                                        data-cart-detail-price="${cartDetail.price}">
                                                     <div class="input-group-btn">
                                                         <button
                                                             class="btn btn-sm btn-plus rounded-circle bg-light border">
@@ -144,14 +144,14 @@
                                         <div class="d-flex justify-content-between">
                                             <h5 class="mb-0 me-4">Phí vận chuyển</h5>
                                             <div class="">
-                                                <p class="mb-0">0 đ</p>
+                                                <p class="mb-0">0 VND</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="py-4 mb-4 border-top border-bottom d-flex justify-content-between">
-                                        <h5 class="mb-0 ps-4 me-4" data-cart-total-price="${totalPrice}">Tổng số tiền
+                                        <h5 class="mb-0 ps-4 me-4">Tổng số tiền
                                         </h5>
-                                        <p class="mb-0">
+                                        <p class="mb-0" data-cart-total-price="${totalPrice}">
                                             <fmt:formatNumber type="number" value="${totalPrice}" />
                                             VND
                                         </p>

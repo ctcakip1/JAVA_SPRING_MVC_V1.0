@@ -172,7 +172,7 @@
         const priceElement = $(`p[data-cart-detail-id='${id}']`);
         if (priceElement) {
             const newPrice = +price * newVal;
-            priceElement.text(formatCurrency(newPrice.toFixed(2)) + " đ");
+            priceElement.text(formatCurrency(newPrice.toFixed(2)) + " VND");
         }
 
         //update total cart price
@@ -193,7 +193,7 @@
             //update
             totalPriceElement?.each(function (index, element) {
                 //update text
-                $(totalPriceElement[index]).text(formatCurrency(newTotal.toFixed(2)) + " đ");
+                $(totalPriceElement[index]).text(formatCurrency(newTotal.toFixed(2)) + " VND");
 
                 //update data-attribute
                 $(totalPriceElement[index]).attr("data-cart-total-price", newTotal);
