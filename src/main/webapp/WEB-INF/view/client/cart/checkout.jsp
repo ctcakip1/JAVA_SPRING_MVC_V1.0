@@ -111,7 +111,7 @@
                                                 <td>
                                                     <p class="mb-0 mt-4" data-cart-detail-id="${cartDetail.id}">
                                                         <fmt:formatNumber type="number"
-                                                            value="${cartDetail.price * cartDetail.quantity}" /> đ
+                                                            value="${cartDetail.price * cartDetail.quantity}" /> VND
                                                     </p>
                                                 </td>
                                             </tr>
