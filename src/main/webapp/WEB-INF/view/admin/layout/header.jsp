@@ -9,7 +9,7 @@
             <!-- Navbar Search-->
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <div class="input-group">
-                    <label style="color: white;">Welcome, Tuan Anh</label>
+                    <label style="color: white;">Welcome, admin@gmail.com</label>
                 </div>
             </form>
             <!-- Navbar-->
@@ -17,13 +17,25 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!">Settings</a></li>
-                        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
-                        <li>
-                            <hr class="dropdown-divider" />
+                    <ul class="dropdown-menu dropdown-menu-end p-4" arialabelledby="dropdownMenuLink">
+                        <li class="d-flex align-items-center flex-column" style="min-width: 200px;">
+                            <img style="width: 70px; height: 70px; border-radius: 50%; overflow: hidden;"
+                                src="/images/avatar/${sessionScope.avatar}" />
+                            <div class="text-center my-3">
+                                <c:out value="${sessionScope.fullName}" />
+                            </div>
                         </li>
-                        <li><a class="dropdown-item" href="#!">Logout</a></li>
+                        <li><a class="dropdown-item" href="#">Quản lý tài khoản</a></li>
+                        <li><a class="dropdown-item" href="/order-history">Lịch sử mua hàng</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <form method="post" action="/logout">
+                                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+                                <button class="dropdown-item">Đăng xuất</button>
+                            </form>
+                        </li>
                     </ul>
                 </li>
             </ul>
