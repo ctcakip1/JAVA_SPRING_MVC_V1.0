@@ -193,7 +193,7 @@
         }
         const input = button.parent().parent().find('input');
         input.val(newVal);
-
+        
         //set form index
         const index = input.attr("data-cart-detail-index")
         const el = document.getElementById(`cartDetails${index}.quantity`);
@@ -234,6 +234,7 @@
             });
         }
     });
+
 
     function formatCurrency(value) {
         // Use the 'vi-VN' locale to format the number according to Vietnamese currency format

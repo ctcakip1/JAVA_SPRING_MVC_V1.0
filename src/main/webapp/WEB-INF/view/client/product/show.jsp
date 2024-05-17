@@ -64,7 +64,7 @@
                             <div class="row g-4 fruite">
                                 <div class="col-12 col-md-4">
                                     <div class="row g-4">
-                                        <div class="col-12">
+                                        <div class="col-12" id="factoryFilter">
                                             <div class="mb-2"><b>Hãng sản xuất</b></div>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="factory-1"
@@ -89,34 +89,34 @@
                                                 <label class="form-check-label" for="factory-4">Gucci</label>
                                             </div>
                                         </div>
-                                        <div class="col-12">
+                                        <div class="col-12" id="targetFilter">
                                             <div class="mb-2"><b>Mục đích sử dụng</b></div>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="target-1"
-                                                    value="WINTER">
-                                                <label class="form-check-label" for="target-1">Winter</label>
+                                                    value="MÙA-ĐÔNG">
+                                                <label class="form-check-label" for="target-1">Mùa đông</label>
                                             </div>
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="target-2"
-                                                    value="AUTUMN">
-                                                <label class="form-check-label" for="target-2">Autumn</label>
+                                                    value="MÙA-XUÂN">
+                                                <label class="form-check-label" for="target-2">Mùa xuân</label>
                                             </div>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="target-3"
-                                                    value="SPRING">
-                                                <label class="form-check-label" for="target-3">Spring</label>
+                                                    value="MÙA-THU">
+                                                <label class="form-check-label" for="target-3">Mùa thu</label>
                                             </div>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="target-4"
-                                                    value="SUMMER">
-                                                <label class="form-check-label" for="target-4">Summer</label>
+                                                    value="MÙA-HÈ">
+                                                <label class="form-check-label" for="target-4">Mùa hè</label>
                                             </div>
 
 
 
                                         </div>
-                                        <div class="col-12">
+                                        <div class="col-12" id="priceFilter">
                                             <div class="mb-2"><b>Mức giá</b></div>
 
                                             <div class="form-check form-check-inline">
@@ -185,7 +185,7 @@
                                                             class="img-fluid w-100 rounded-top" alt="">
                                                     </div>
                                                     <div class="text-white bg-secondary px-3 py-1 rounded position-absolute"
-                                                        style="top: 10px; left: 10px;">Laptop
+                                                        style="top: 10px; left: 10px;">Clother
                                                     </div>
                                                     <div
                                                         class="p-4 border border-secondary border-top-0 rounded-bottom">

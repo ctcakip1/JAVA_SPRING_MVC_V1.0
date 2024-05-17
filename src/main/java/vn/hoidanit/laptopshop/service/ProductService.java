@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import jakarta.servlet.http.HttpSession;
@@ -13,6 +14,7 @@ import vn.hoidanit.laptopshop.domain.CartDetail;
 import vn.hoidanit.laptopshop.domain.Order;
 import vn.hoidanit.laptopshop.domain.OrderDetail;
 import vn.hoidanit.laptopshop.domain.Product;
+import vn.hoidanit.laptopshop.domain.Product_;
 import vn.hoidanit.laptopshop.domain.Role;
 import vn.hoidanit.laptopshop.domain.User;
 import vn.hoidanit.laptopshop.repository.CartDetailRepository;
@@ -21,6 +23,7 @@ import vn.hoidanit.laptopshop.repository.OrderDetailRepository;
 import vn.hoidanit.laptopshop.repository.OrderRepository;
 import vn.hoidanit.laptopshop.repository.ProductRespository;
 import vn.hoidanit.laptopshop.repository.RoleRepository;
+import vn.hoidanit.laptopshop.service.specification.ProductSpecs;
 
 @Service
 public class ProductService {
@@ -51,6 +54,14 @@ public class ProductService {
 
     public List<Product> getAllProduct() {
         return this.productRespository.findAll();
+    }
+
+    public Page<Product> getAllProductWithSpec(Pageable page, String name) {
+        return this.productRespository.findAll(ProductSpecs.nameLike(name), page);
+    }
+
+    public Page<Product> minPrice(Pageable page, double price){
+        return this.productRespository.findAll(ProductSpecs.priceGE(price), page);
     }
 
     public Page<Product> getAllProduct(Pageable page) {
