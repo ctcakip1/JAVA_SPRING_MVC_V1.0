@@ -108,7 +108,7 @@
                                                             <form:option value="DIOR">DIOR</form:option>
                                                             <form:option value="BURBERRY">BURBERRY</form:option>
                                                             <form:option value="GUCCI">GUCCI</form:option>
-                                                            <form:option value="LV">LOUIS VUITTON
+                                                            <form:option value="LOUISVUITTON">LOUIS VUITTON
                                                             </form:option>
                                                         </form:select>
                                                     </div>

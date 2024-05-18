@@ -90,7 +90,7 @@ public class UserController {
         } catch (Exception e) {
             // page = 1
         }
-        Pageable pageable = PageRequest.of(page - 1, 1);
+        Pageable pageable = PageRequest.of(page - 1, 6);
         Page<User> users = this.userService.getAllUser(pageable);
         List<User> listUsers = users.getContent();
         model.addAttribute("users1", listUsers);

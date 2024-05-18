@@ -79,7 +79,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="factory-3"
-                                                    value="LV">
+                                                    value="LOUISVUITTON">
                                                 <label class="form-check-label" for="factory-3">LV</label>
                                             </div>
 
@@ -93,24 +93,24 @@
                                             <div class="mb-2"><b>Mục đích sử dụng</b></div>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="target-1"
-                                                    value="MÙA-ĐÔNG">
-                                                <label class="form-check-label" for="target-1">Mùa đông</label>
+                                                    value="WINTER">
+                                                <label class="form-check-label" for="target-1">Winter</label>
                                             </div>
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="target-2"
-                                                    value="MÙA-XUÂN">
-                                                <label class="form-check-label" for="target-2">Mùa xuân</label>
+                                                    value="AUTUMN">
+                                                <label class="form-check-label" for="target-2">Autumn</label>
                                             </div>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="target-3"
-                                                    value="MÙA-THU">
-                                                <label class="form-check-label" for="target-3">Mùa thu</label>
+                                                    value="SPRING">
+                                                <label class="form-check-label" for="target-3">Spring</label>
                                             </div>
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="target-4"
-                                                    value="MÙA-HÈ">
-                                                <label class="form-check-label" for="target-4">Mùa hè</label>
+                                                    value="SUMMER">
+                                                <label class="form-check-label" for="target-4">Summer</label>
                                             </div>
 
 
@@ -141,7 +141,7 @@
 
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="price-5"
-                                                    value="tren-20-triệu">
+                                                    value="tren-20-trieu">
                                                 <label class="form-check-label" for="price-5">Trên 20 triệu</label>
                                             </div>
                                         </div>
@@ -161,7 +161,7 @@
                                             </div>
 
                                             <div class="form-check form-check-inline">
-                                                <input class="form-check-input" type="radio" id="sort-3"
+                                                <input class="form-check-input" type="radio" id="sort-3" checked
                                                     value="gia-nothing" name="radio-sort">
                                                 <label class="form-check-label" for="sort-3">Không sắp xếp</label>
                                             </div>
@@ -169,7 +169,8 @@
                                         </div>
                                         <div class="col-12">
                                             <button
-                                                class="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4">
+                                                class="btn border-secondary rounded-pill px-4 py-3 text-primary text-uppercase mb-4"
+                                                id="btnFilter">
                                                 Lọc Sản Phẩm
                                             </button>
                                         </div>
@@ -177,6 +178,11 @@
                                 </div>
                                 <div class="col-12 col-md-8 text-center">
                                     <div class="row g-4">
+                                        <c:if test="${totalPages == 0}">
+                                            <div>
+                                                Khong tim thay san pham
+                                            </div>
+                                        </c:if>
                                         <c:forEach var="product" items="${products}">
                                             <div class="col-md-6 col-lg-4">
                                                 <div class="rounded position-relative fruite-item">
@@ -221,30 +227,31 @@
                                                 </div>
                                             </div>
                                         </c:forEach>
-
-                                        <div class="pagination d-flex justify-content-center mt-5">
-                                            <li class="page-item">
-                                                <a class="${1 eq currentPage ? 'disabled page-link' : 'page-link'}"
-                                                    href="/products?page=${currentPage - 1}" aria-label="Previous">
-                                                    <span aria-hidden="true">&laquo;</span>
-                                                </a>
-                                            </li>
-                                            <c:forEach begin="0" end="${totalPages - 1}" varStatus="loop">
+                                        <c:if test="${totalPages > 0}">
+                                            <div class="pagination d-flex justify-content-center mt-5">
                                                 <li class="page-item">
-                                                    <a class="${(loop.index + 1) eq currentPage ? 'active page-link' : 'page-link'}"
-                                                        href="/products?page=${loop.index + 1}">
-                                                        ${loop.index + 1}
+                                                    <a class="${1 eq currentPage ? 'disabled page-link' : 'page-link'}"
+                                                        href="/products?page=${currentPage - 1}" aria-label="Previous">
+                                                        <span aria-hidden="true">&laquo;</span>
                                                     </a>
                                                 </li>
-                                            </c:forEach>
-                                            <li class="page-item">
-                                                <a class="${totalPages eq currentPage ? 'disabled page-link' : 'page-link'}"
-                                                    href="/products?page=${currentPage + 1}" aria-label="Next">
-                                                    <span aria-hidden="true">&raquo;</span>
-                                                </a>
-                                            </li>
+                                                <c:forEach begin="0" end="${totalPages - 1}" varStatus="loop">
+                                                    <li class="page-item">
+                                                        <a class="${(loop.index + 1) eq currentPage ? 'active page-link' : 'page-link'}"
+                                                            href="/products?page=${loop.index + 1}">
+                                                            ${loop.index + 1}
+                                                        </a>
+                                                    </li>
+                                                </c:forEach>
+                                                <li class="page-item">
+                                                    <a class="${totalPages eq currentPage ? 'disabled page-link' : 'page-link'}"
+                                                        href="/products?page=${currentPage + 1}" aria-label="Next">
+                                                        <span aria-hidden="true">&raquo;</span>
+                                                    </a>
+                                                </li>
 
-                                        </div>
+                                            </div>
+                                        </c:if>
                                     </div>
                                 </div>
                             </div>
@@ -253,9 +260,7 @@
                 </div>
                 <!-- Single Product End -->
 
-                <!-- Features Section Start -->
-                <jsp:include page="../layout/feature.jsp" />
-                <!-- Features Section End -->
+
 
                 <!-- Footer Start -->
                 <jsp:include page="../layout/footer.jsp" />

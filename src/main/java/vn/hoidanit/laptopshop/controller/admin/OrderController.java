@@ -38,7 +38,7 @@ public class OrderController {
         } catch (Exception e) {
             // TODO: handle exception
         }
-        Pageable pageable = PageRequest.of(page - 1, 1);
+        Pageable pageable = PageRequest.of(page - 1, 6);
         Page<Order> orders = this.orderService.getAllOrder(pageable);
         List<Order> listOrders = orders.getContent();
         model.addAttribute("orders", listOrders);

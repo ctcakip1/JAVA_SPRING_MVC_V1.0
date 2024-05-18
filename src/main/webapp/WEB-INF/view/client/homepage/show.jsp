@@ -103,7 +103,7 @@
                                                                         <button
                                                                             class="mx-auto btn border border-secondary rounded-pill px-3 text-primary"><i
                                                                                 class="fa fa-shopping-bag me-2 text-primary"></i>
-                                                                            Add to cart</button>
+                                                                            Them vao gio hang</button>
                                                                     </form>
 
                                                                 </div>
@@ -121,9 +121,7 @@
                 </div>
                 <!-- Clothers Shop End-->
 
-                <!-- Features Section Start -->
-                <jsp:include page="../layout/feature.jsp" />
-                <!-- Features Section End -->
+
 
                 <!-- Footer Start -->
                 <jsp:include page="../layout/footer.jsp" />
