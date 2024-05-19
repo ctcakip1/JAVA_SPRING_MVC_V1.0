@@ -22,7 +22,8 @@
                                     <i class="fa fa-shopping-bag fa-2x"></i>
                                     <span
                                         class="position-absolute bg-secondary rounded-circle d-flex align-items-center justify-content-center text-dark px-1"
-                                        style="top: -5px; left: 15px; height: 20px; min-width: 20px;">${sessionScope.sum}
+                                        style="top: -5px; left: 15px; height: 20px; min-width: 20px;"
+                                        id="sumCart">${sessionScope.sum}
                                     </span>
                                 </a>
                                 <div class="dropdown my-auto">
@@ -55,7 +56,7 @@
                                 </div>
                             </c:if>
                             <c:if test="${empty pageContext.request.userPrincipal}">
-                                <a href="/login" class="position-relative me-4 my-auto">
+                                <a href="/login" class="a-login position-relative me-4 my-auto">
                                     Đăng nhập
 
                                 </a>
