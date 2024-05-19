@@ -86,19 +86,20 @@ public class ProductService {
             double max = 0;
             switch (p) {
                 case "duoi-10-trieu":
-                    min = 0;
+                    min = 1;
                     max = 10000000;
                     break;
                 case "10-15-trieu":
                     min = 10000000;
                     max = 15000000;
+                    break;
                 case "15-20-trieu":
                     min = 15000000;
                     max = 20000000;
+                    break;
                 case "tren-20-trieu":
                     min = 20000000;
                     max = 200000000;
-                default:
                     break;
             }
             if (min != 0 && max != 0) {
