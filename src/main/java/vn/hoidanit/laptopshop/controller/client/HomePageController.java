@@ -2,6 +2,7 @@ package vn.hoidanit.laptopshop.controller.client;
 
 import java.util.List;
 
+import org.hibernate.dialect.lock.UpdateLockingStrategy;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -12,6 +13,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import vn.hoidanit.laptopshop.domain.Order;
 import vn.hoidanit.laptopshop.domain.Product;
@@ -19,9 +21,11 @@ import vn.hoidanit.laptopshop.domain.User;
 import vn.hoidanit.laptopshop.domain.dto.RegisterDTO;
 import vn.hoidanit.laptopshop.service.OrderService;
 import vn.hoidanit.laptopshop.service.ProductService;
+import vn.hoidanit.laptopshop.service.UploadService;
 import vn.hoidanit.laptopshop.service.UserService;
 
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -36,19 +40,21 @@ public class HomePageController {
     private final UserService userService;
     private final PasswordEncoder passwordEncoder;
     private final OrderService orderService;
+    private final UploadService uploadService;
 
     public HomePageController(ProductService productService, UserService userService, PasswordEncoder passwordEncoder,
-            OrderService orderService) {
+            OrderService orderService, UploadService uploadService) {
         this.productService = productService;
         this.userService = userService;
         this.passwordEncoder = passwordEncoder;
         this.orderService = orderService;
+        this.uploadService = uploadService;
     }
 
     @GetMapping("/")
     public String getHomePage(Model model) {
         // List<Product> products = this.productService.getAllProduct();
-        Pageable pageable = PageRequest.of(0, 20);
+        Pageable pageable = PageRequest.of(0, 10);
         Page<Product> prs = this.productService.getAllProduct(pageable);
         List<Product> products = prs.getContent();
         model.addAttribute("product1", products);
@@ -98,6 +104,14 @@ public class HomePageController {
         List<Order> orders = this.orderService.fetchOrderByUser(currentUser);
         model.addAttribute("orders", orders);
         return "client/cart/order-history";
+    }
+
+    @GetMapping("/account/{id}")
+    public String getAccountPage(Model model, @PathVariable long id) {
+        User currentUser = this.userService.getUserById(id);
+        model.addAttribute("newAccount", currentUser);
+        model.addAttribute("id", id);
+        return "client/auth/account";
     }
 
 }

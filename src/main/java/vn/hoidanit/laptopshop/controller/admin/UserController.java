@@ -145,6 +145,8 @@ public class UserController {
         this.userService.deleteUserById(tuananh.getId());
         return "redirect:/admin/user";
     }
+
+    
 }
 
 // @RestController
