@@ -152,7 +152,7 @@ public class ItemController {
             // TODO: handle exception
         }
         // check sort price
-        Pageable pageable = PageRequest.of(page - 1, 30);
+        Pageable pageable = PageRequest.of(page - 1, 10);
         if (productCriteriaDTO.getSort() != null &&
                 productCriteriaDTO.getSort().isPresent()) {
             String sort = productCriteriaDTO.getSort().get();

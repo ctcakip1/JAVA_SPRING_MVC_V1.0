@@ -13,7 +13,7 @@ public class ProductSpecs {
     }
 
     public static Specification<Product> priceGE(double price) {
-        return (root, query, criteriaBuilder) -> criteriaBuilder.ge(root.get(Product_.PRICE), price);
+        return (root, query, criteriaBuilder) -> criteriaBuilder.ge(root.get(Product_.PRICE), price);//meta model
     }
 
     public static Specification<Product> matchFactory(String factory) {
